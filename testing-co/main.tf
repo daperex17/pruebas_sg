@@ -5,7 +5,6 @@
   
 #}
 
-# checkov:skip=CKV2_AWS_5 Justificación: Este SG es asociado a recursos fuera de este módulo Terraform
 resource "aws_security_group" "sg_ec2_mongo_testing" {
   name        = "SG Mongo Testing"
   description = "Security group for mongodb databases"
@@ -36,6 +35,7 @@ resource "aws_security_group" "sg_ec2_mongo_testing" {
   }
 
   egress {
+    description      = "Allow all outbound traffic"
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
