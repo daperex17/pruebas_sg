@@ -34,14 +34,14 @@ resource "aws_security_group" "sg_ec2_mongo_testing" {
     cidr_blocks = ["10.7.7.0/24"]
   }
 
-  egress {
-    description      = "Allow all outbound traffic"
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
+#   egress {
+#     description      = "Allow all outbound traffic"
+#     from_port        = 0
+#     to_port          = 0
+#     protocol         = "-1"
+#     cidr_blocks      = ["0.0.0.0/0"]
+#     ipv6_cidr_blocks = ["::/0"]
+#   }
 
   tags = {
     Name = "SG Mongo Testing"
