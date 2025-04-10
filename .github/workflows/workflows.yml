@@ -13,18 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run Checkov and export to TXT
+      - name: Run Checkov on testing-co
         uses: bridgecrewio/checkov-action@master
         with:
           directory: ./testing-co
           framework: terraform
           download_external_modules: true
-          skip_check: CKV2_AWS_5
-          output_format: cli
-          output_file_path: ./testing-co/checkov-results.txt
-
-      - name: Upload TXT report
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          name: checkov-results-txt
-          path: ./testing-co/checkov-results.txt
+          #skip_check: CKV2_AWS_5
