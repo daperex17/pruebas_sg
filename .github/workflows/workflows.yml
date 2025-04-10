@@ -20,3 +20,9 @@ jobs:
           framework: terraform
           download_external_modules: true
           skip_check: CKV2_AWS_5
+
+      - name: Upload SARIF report
+        uses: actions/upload-artifact@v3
+        with:
+          name: checkov-results
+          path: ./testing-co/results.sarif
