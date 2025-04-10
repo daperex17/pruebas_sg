@@ -79,10 +79,3 @@ resource "aws_security_group" "sg_ec2_mongo_testing" {
     }
     vpc_id      = "vpc-019c03212464e3366"
 }
-
-# % terraform import aws_security_group.sg_ec2_mongodb_upgrade sg-03914dc18396e9c7c
-
-resource "aws_security_group" "sg_ec2_mongodb_upgrade" {
-    provider = aws.account_testing_co
-  
-}
